@@ -10,15 +10,15 @@
 #define WIDTH 7
 #define HEIGHT 6
 // FUNCTION PROTOTYPES
-void drawmodBoard(int boardmatrix[WIDTH][HEIGHT], column, player);
+void drawmodBoard(int boardmatrix[HEIGHT][WIDTH], column, player);
 void resetDisplay(void);
-int testforwin(int boardmatrix[WIDTH][HEIGHT]);
+int testforwin(int boardmatrix[HEIGHT][WIDTH]);
 int promptUser(player);
-int checkValidity(boardmatrix[WIDTH][HEIGHT], column);
+int checkValidity(boardmatrix[HEIGHT][WIDTH], column);
 // GLOBAL
 // MAIN
 int main(){
-    int boardmatrix[WIDTH][HEIGHT] = {
+    int boardmatrix[HEIGHT][WIDTH] = {
         {0,0,0,0,0,0,0},
         {0,0,0,0,0,0,0},
         {0,0,0,0,0,0,0},
