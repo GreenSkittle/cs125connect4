@@ -3,7 +3,8 @@
 // makes use of the global artboard variable
 // artboard is a pointer to the ascii art -  defined globally
 // ok now the artboard is unique to this function
-void drawmodBoard(int boardmatrix[WIDTH][HEIGHT], column, player){
+// note: must be [HEIGHT][WIDTH] because of how rowsxcols works
+void drawmodBoard(int boardmatrix[HEIGHT][WIDTH], column, player){
     int j,k;
     for (j=0;j<=HEIGHT;j++){
         for (k=0;k<=WIDTH;k++){
