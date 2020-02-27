@@ -10,13 +10,11 @@
 #define WIDTH 7
 #define HEIGHT 6
 // FUNCTION PROTOTYPES
-void drawBoard(int boardmatrix[WIDTH][HEIGHT]);
+void drawmodBoard(int boardmatrix[WIDTH][HEIGHT], column, player);
 void resetDisplay(void);
 int testforwin(int boardmatrix[WIDTH][HEIGHT]);
 int promptUser(player);
-int checkValidity(boardmatrix[][], column);
-void modboard(int boardmatrix[][], column, player);
-
+int checkValidity(boardmatrix[WIDTH][HEIGHT], column);
 // GLOBAL
 // MAIN
 int main(){
@@ -33,6 +31,7 @@ int main(){
     int location = -1;
     int turncounter = 0;
     int valid = 0;
+    
     while (running == 1){
         resetDisplay();
         testforwin();
