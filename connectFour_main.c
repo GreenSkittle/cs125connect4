@@ -12,11 +12,11 @@
 #define REDPLAYER 1
 #define YELLOWPLAYER 2
 // FUNCTION PROTOTYPES
-void drawmodBoard(int boardmatrix[ROWS][COLUMNS], int column, int player);
+void drawmodBoard(int* boardptr, int column, int player);
 void resetDisplay(void);
-int testforwin(int boardmatrix[ROWS][COLUMNS]);
+int testforwin(int* boardptr);
 int promptUser(int player);
-int checkValidity(int boardmatrix[ROWS][COLUMNS], int column);
+int checkValidity(int* boardptr, int column);
 // GLOBAL
 // MAIN
 int main(void){
@@ -26,6 +26,16 @@ int main(void){
     int location = -1;
     int turncounter = 0;
     int valid;
+	int boardmatrix[ROWS][COLUMNS] = {
+		{0,0,0,0,0,0,0},
+		{0,0,0,0,0,0,0},
+		{0,0,0,0,0,0,0},
+		{0,0,0,0,0,0,0},
+		{0,0,0,0,0,0,0},
+		{0,0,0,0,0,0,0},
+	}
+	// POINTER
+	int* boardptr = &boardmatrix;
 	// STRINGS
 	char redWins[] =	"\n\tThe game has ended. Red wins!\n";
 	char yellowWins[] =	"\n\tThe game has ended. Yellow wins!\n";
@@ -33,13 +43,13 @@ int main(void){
 	// BEGIN
     resetDisplay(void);
     while (running == 1){
-        if (testforwin(boardmatrix[ROWS][COLUMNS]) !=0){
+        if (testforwin(*boardptr) !=0){
 			break;
 		}
 	// PROMPT AND CHECK
         while (1){
             location = promptUser(player);
-            valid = checkValidity(boardmatrix[ROWS][COLUMNS], location);
+            valid = checkValidity(*boardptr, location);
             if (valid == 1){
                 break;
             }
@@ -47,7 +57,7 @@ int main(void){
             }
         }
     // DO ACTIONS
-        drawmodBoard(boardmatrix[ROWS][COLUMNS]);
+        drawmodBoard(*boardptr);
 		turncounter++;
 		switch (player) {
 			case 1: 
@@ -58,7 +68,7 @@ int main(void){
 				break;
 		}
     }
-	switch (testforwin(boardmatrix[ROWS][COLUMNS])){
+	switch (testforwin(*boardptr)){
 		case 1: 
 			printf("%s",redWins);
 			break;
