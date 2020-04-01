@@ -14,7 +14,7 @@
 #define YELLOWPLAYER 2
 int main(void){
 	// SETUP
-    Game demo;
+    Game demo[ROWS*COLUMNS+1];
     int running = 1;
 	int player = 1;
     int location = -1;
