@@ -1,2 +1,4 @@
-main.o: mainFile.c mainHeader.h
-	gcc -c mainFileName.c
+connectFour: main.o /* all functions */
+
+main.o: main.c header.h
+	gcc -c main.c
