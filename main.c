@@ -30,7 +30,7 @@ int main(void){
 	}
 	// POINTERS
 	int* boardptr = &boardmatrix;
-    /* FILE*; */
+	FILE* demo = fopen("lastGame","a");
 	// CUSTOMIZABLE STRINGS
 	char redWins[] =	"\n\tThe game has ended. Red wins!\n";
 	char yellowWins[] =	"\n\tThe game has ended. Yellow wins!\n";
@@ -53,7 +53,7 @@ int main(void){
         }
         // GAME ACTIONS
         drawmodBoard(boardptr, player, column);
-        /* modify with the same data before inc */
+        fprintf("\n");
 		turncounter++;
 		switch (player) {
 			case 1: 
@@ -75,6 +75,7 @@ int main(void){
 		default: 
 			printf("%s",tie);
 	}
+	fclose("demo");
     return 0;
 }
 // END MAIN
