@@ -8,10 +8,6 @@
 // HEADER
 #include "header.h"
 // CONFIGURATION
-#define ROWS 6
-#define COLUMNS 7
-#define REDPLAYER 1
-#define YELLOWPLAYER 2
 int main(void){
 	// SETUP
     Game demo[ROWS*COLUMNS+1];
@@ -27,7 +23,7 @@ int main(void){
 		{0,0,0,0,0,0,0},
 		{0,0,0,0,0,0,0},
 		{0,0,0,0,0,0,0},
-	}
+	};
 	// POINTERS
 	int* boardptr = &boardmatrix;
 	FILE* demo = fopen("lastGame","a");
@@ -44,7 +40,7 @@ int main(void){
         // PROMPT AND CHECK
         while (1){
             location = promptUser(player);
-            valid = checkValidity(boardptr, location);
+            valid = checkValidity(boardmatrix[ROWS][COLUMNS], location);
             if (valid == 1){
                 break;
             }
