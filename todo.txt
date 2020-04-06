@@ -1,3 +1,2 @@
- - functions with "int* pointy" need "header.h" included as part of the make target.
- - move the #defines to header.h
- - a couple functions still need to be written
+- makefile
+- testforwin
