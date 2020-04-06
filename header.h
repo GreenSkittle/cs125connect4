@@ -5,7 +5,7 @@
     // DEMO STRUCTURE
     typedef struct game {
         int turnNumber;
-        char board[ROWS][COLUMNS];
+        int board[ROWS][COLUMNS];
         int winState;
     } Game;
     // FUNCTION PROTOTYPES
