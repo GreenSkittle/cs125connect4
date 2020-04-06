@@ -7,14 +7,14 @@ int promptUser(int player){
 			printf("\033[1;31m");
 			printf("\nPlayer 1: ");
 			printf("\033[0m");
-			printf("Pick a spot A-G:\n");
+			printf("Pick a spot A-%c:\n",COLUMNS+64);
 			quickcheck = scanf("%c", &choice);
 			break;
 		case 2:
 			printf("\033[1;31m");
 			printf("\nPlayer 2: ");
 			printf("\033[0m");
-			printf("Pick a spot A-G:\n");
+			printf("Pick a spot A-%c:\n",COLUMNS+64);
 			quickcheck = scanf("%c", &choice);
 			break;
 		default: break;
