@@ -1,14 +1,17 @@
-// Note: no error handling for column neede because checkValidity already catches if board is full.
-// based on  a pointer to the board.
-
-void drawmodBoard(int* pointy, column, player){
-    int boardmatrix[ROWS][COLUMNS] = *pointy;
-    int k;
-    for (k = ROWS;k >= 0;k--){
-        if (boardmatrix[k][column] == 0){
-            boardmatrix[k][column] = player;
-            break;
+void drawmodBoard(int boardmatrix[ROWS][COLUMNS], column, player){
+    int k, j;
+    // DESIGN: int graphic[ROWS][COLUMNS]{};
+    if (column !=-1 && player !=-1){
+        for (k = ROWS-1; k >= 0; k--){
+            if (boardmatrix[k][column] == 0){
+                boardmatrix[k][column] = player;
+                break;
+            }
         }
     }
-    /* now print it here */
+    // PRIMITIVE PRINTING
+    for (k = 0; k <= ROWS-1; k++){
+        printf("\n%s",boardmatrix[k]);
+    }
+    printf("\n");
 }
