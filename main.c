@@ -15,7 +15,7 @@ int main(void){
 	int player = 1;
     int location = -1;
     int turncounter = 0;
-    int valid;
+    int valid = -1;
 	int boardmatrix[ROWS][COLUMNS] = {
 		{0,0,0,0,0,0,0},
 		{0,0,0,0,0,0,0},
@@ -25,16 +25,16 @@ int main(void){
 		{0,0,0,0,0,0,0},
 	};
 	// POINTERS
-	int* boardptr = &boardmatrix;
-	FILE* demo = fopen("lastGame","a");
+	FILE* lastdemo = fopen("lastGame.txt","w");
+    FILE* alldemos = fopen("allGames.txt","a");
 	// CUSTOMIZABLE STRINGS
 	char redWins[] =	"\n\tThe game has ended. Red wins!\n";
 	char yellowWins[] =	"\n\tThe game has ended. Yellow wins!\n";
-	char tie[] =	"\n\tThe game has ended in a draw!";
+	char tie[] =	"\n\tThe game has ended in a draw!\n";
     // BEGIN
     resetDisplay();
     while (running == 1){
-        if (testforwin(boardptr) != 0){
+        if (testforwin(boardmatrix[ROWS][COLUMNS]) != 0){
 			break;
 		}
         // PROMPT AND CHECK
@@ -47,9 +47,9 @@ int main(void){
             else {
             }
         }
-        // GAME ACTIONS
-        drawmodBoard(boardptr, player, column);
-        fprintf("\n");
+        // GAME ACTIONS AND DEMO
+        drawmodBoard(boardmatrix[ROWS][COLUMNS], player, column);
+        fprintf("\n"); /* write to both files */
 		turncounter++;
 		switch (player) {
 			case 1: 
@@ -58,20 +58,24 @@ int main(void){
 			case 2: 
 				player = 1;
 				break;
+            default:
+                player = 1;
+                break;
 		}
     }
     // AFTER GAME
-	switch (testforwin(boardptr)){
+	switch (testforwin(boardmatrix[ROWS][COLUMNS])){
 		case 1: 
 			printf("%s",redWins);
 			break;
 		case 2: 
 			printf("%s",yellowWins);
 			break;
-		default: 
+		default: //need fix here
 			printf("%s",tie);
 	}
-	fclose("demo");
+	fclose("lastdemo");
+    fclose("alldemos");
     return 0;
 }
 // END MAIN
