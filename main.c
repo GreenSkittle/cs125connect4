@@ -1,13 +1,5 @@
-// LIBRARIES
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <math.h>
-#include <time.h>
-// HEADER
+// CONFIGURATION HEADER
 #include "header.h"
-// CONFIGURATION
 int main(void){
 	// SETUP
     Game demo[ROWS*COLUMNS+1];
@@ -32,7 +24,7 @@ int main(void){
 	char yellowWins[] =	"\n\tThe game has ended. Yellow wins!\n";
 	char tie[] =	"\n\tThe game has ended in a draw!\n";
     // BEGIN
-    resetDisplay();
+    resetdisplay();
     drawmodBoard(boardmatrix[ROWS][COLUMNS], -1, -1);
     while (running == 1){
         if (testforwin(boardmatrix[ROWS][COLUMNS]) != 0){
@@ -52,9 +44,9 @@ int main(void){
             }
         }
         // GAME ACTIONS AND DEMO
-        drawmodBoard(boardmatrix[ROWS][COLUMNS], player, column);
-        demo[turncounter].turnnumber = turncounter;
-        demo[turncounter].board = boardmatrix;
+        drawmodBoard(boardmatrix[ROWS][COLUMNS], player, location);
+        demo[turncounter].turnNumber = turncounter;
+        demo[turncounter].board[ROWS][COLUMNS] = boardmatrix;
 		turncounter++;
 		switch (player){
 			case 1: 
@@ -80,11 +72,11 @@ int main(void){
 			printf("%s",tie);
             break;
 	}
-    demo[turncounter].turnnumber = turncounter;
-    demo[turncounter].board = boardmatrix;
+    demo[turncounter].turnNumber = turncounter;
+    demo[turncounter].board[ROWS][COLUMNS] = boardmatrix;
     demo[turncounter].winState = testforwin(boardmatrix[ROWS][COLUMNS]);
     for (j = 0; j <= turncounter; j++){
-        fprintf(alldemos,"\nTurn: %d",demo[j].turnnumber);
+        fprintf(alldemos,"\nTurn: %d",demo[j].turnNumber);
         for (k = 0; k <= ROWS-1; k++){
             fprintf(alldemos,"\n%s",demo[j].board[k]);
         }
