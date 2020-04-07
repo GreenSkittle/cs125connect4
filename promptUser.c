@@ -1,3 +1,4 @@
+#include "header.h"
 int promptUser(int player){
 	char choice;
 	int location;
