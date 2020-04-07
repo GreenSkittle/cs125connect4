@@ -1,5 +1,9 @@
 #ifndef HEADER_H
 #define HEADER_H
+// LIBRARIES
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
     #define ROWS 6
     #define COLUMNS 7
     // DEMO STRUCTURE
@@ -11,7 +15,7 @@
     // FUNCTION PROTOTYPES
     void drawmodBoard(int board[ROWS][COLUMNS], int column, int player);
     void resetDisplay(void);
-    int testforwin(int board[ROWS][COLUMNS);
+    int testforwin(int board[ROWS][COLUMNS]);
     int promptUser(int player);
-    int checkValidity(int board[ROWS][COLUMNS, int column);
+    int checkValidity(int board[ROWS][COLUMNS], int column);
 #endif
