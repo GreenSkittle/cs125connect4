@@ -14,7 +14,7 @@
     } Game;
     // FUNCTION PROTOTYPES
     void drawmodBoard(int board[ROWS][COLUMNS], int column, int player);
-    void resetDisplay(void);
+    void resetdisplay(void);
     int testforwin(int board[ROWS][COLUMNS]);
     int promptUser(int player);
     int checkValidity(int board[ROWS][COLUMNS], int column);
