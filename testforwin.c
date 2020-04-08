@@ -1,11 +1,15 @@
 #include "header.h"
 int testforwin(int board[ROWS][COLUMNS]){
     int result = 0, j, k, hasWon = 0, fullboard = 1;
+    // We assume the board is full, and then if any spots are open, redact that claim.
     for (k = 0; k <= COLUMNS - 1; k++){
         if (board[0][k] == 0){
             fullboard = 0;
         }
     }
+    // There are 4 patterns in which someone can win.
+    // We have 8 statements, because there are two players.
+    // There is also some error correction in case the index points outside the matrix.
     for (j = 0; j <= ROWS - 1; j++){
         if (hasWon == 1){
             break;
@@ -54,6 +58,7 @@ int testforwin(int board[ROWS][COLUMNS]){
             }
         }
     }
+    // The very last (and most difficult) thing to test is if there is a tie:
     if (hasWon == 0 && fullboard == 1){
         result = 3;
     }
