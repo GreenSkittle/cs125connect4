@@ -1,59 +1,36 @@
 #include "header.h"
 int testforwin(int board[ROWS][COLUMNS]){
-    int result, j, k, fullboard = 0;
-    int padboard[ROWS+8][COLUMNS+8] = {
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-    };
+    int result, j, k, fullboard;
+    fullboard = 1;
     for (k = 0; k <= COLUMNS - 1; k++){
         if (board[0][k] == 0){
-            break;
-        }
-        else {
-            fullboard = 1;
+            fullboard = 0;
         }
     }
     for (j = 0; j <= ROWS - 1; j++){
         for (k = 0; k <= COLUMNS - 1; k++){
-            padboard[j+4][k+4] = board[j][k];
-        }
-    }
-    for (j = 0; j <= ROWS - 1; j++){
-        for (k = 0; k <= COLUMNS - 1; k++){
-            if (padboard[k+4][j+4] == 1 && padboard[k+4][j+5] == 1 && padboard[k+4][j+6] == 1 && padboard[k+4][j+7] == 1){
+            if (board[j][k] == 1 && board[j+1][k] == 1 && board[j+2][k] == 1 && board[j+3][k] == 1){
                 result = 1;
             }
-            else if (padboard[k+4][j+4] == 2 && padboard[k+4][j+5] == 2 && padboard[k+4][j+6] == 2 && padboard[k+4][j+7] == 2){
+            else if (board[j][k] == 2 && board[j+1][k] == 2 && board[j+2][k] == 2 && board[j+3][k] == 2){
                 result = 2;
             }
-            else if (padboard[k+4][j+4] == 1 && padboard[k+5][j+4] == 1 && padboard[k+6][j+4] == 1 && padboard[k+7][j+4] == 1){
+            else if (board[j][k] == 1 && board[j][k+1] == 1 && board[j][k+2] == 1 && board[j][k+3] == 1){
                 result = 1;
             }
-            else if (padboard[k+4][j+4] == 2 && padboard[k+5][j+4] == 2 && padboard[k+6][j+4] == 2 && padboard[k+7][j+4] == 2){
+            else if (board[j][k] == 2 && board[j][k+1] == 2 && board[j][k+2] == 2 && board[j][k+3] == 2){
                 result = 2;
             }
-            else if (padboard[k+4][j+4] == 1 && padboard[k+5][j+5] == 1 && padboard[k+6][j+6] == 1 && padboard[k+7][j+7] == 1){
+            else if (board[j][k] == 1 && board[j+1][k+1] == 1 && board[j+2][k+2] == 1 && board[j+3][k+3] == 1){
                 result = 1;
             }
-            else if (padboard[k+4][j+4] == 2 && padboard[k+5][j+5] == 2 && padboard[k+6][j+6] == 2 && padboard[k+7][j+7] == 2){
+            else if (board[j][k] == 2 && board[j+1][k+1] == 2 && board[j+2][k+2] == 2 && board[j+3][k+3] == 2){
                 result = 2;
             }
-            else if (padboard[k+4][j+4] == 1 && padboard[k+3][j+5] == 1 && padboard[k+2][j+6] == 1 && padboard[k+1][j+7] == 1){
+            else if (board[j][k] == 1 && board[j-1][k+1] == 1 && board[j-2][k+2] == 1 && board[j-3][k+3] == 1){
                 result = 1;
             }
-            else if (padboard[k+4][j+4] == 2 && padboard[k+3][j+5] == 2 && padboard[k+2][j+6] == 2 && padboard[k+1][j+7] == 2){
+            else if (board[j][k] == 2 && board[j-1][k+1] == 2 && board[j-2][k+2] == 2 && board[j-3][k+3] == 2){
                 result = 2;
             }
             else if (fullboard == 1){
