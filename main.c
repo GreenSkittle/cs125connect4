@@ -1,3 +1,4 @@
+#include "header.h"
 int main(void){
 	// SETUP
     Game demo[ROWS*COLUMNS+1];
