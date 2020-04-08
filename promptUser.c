@@ -1,5 +1,6 @@
 #include "header.h"
 int promptUser(int player){
+	char string[255];
 	char choice;
 	int location;
 	int quickcheck;
@@ -9,14 +10,16 @@ int promptUser(int player){
 			printf("\nPlayer 1: ");
 			printf("\033[0m");
 			printf("Pick a spot A-%c:\n", COLUMNS + 64);
-			quickcheck = scanf("\n%c", &choice);
+			quickcheck = scanf("\n%s", string);
+			choice = string[0];
 			break;
 		case 2:
 			printf("\033[1;31m");
 			printf("\nPlayer 2: ");
 			printf("\033[0m");
 			printf("Pick a spot A-%c:\n", COLUMNS + 64);
-			quickcheck = scanf("\n%c", &choice);
+			quickcheck = scanf("\n%s", string);
+			choice = string[0];
 			break;
 		default: break;
 	}
