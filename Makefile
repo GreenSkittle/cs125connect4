@@ -1,4 +1,2 @@
-connectFour: main.o /* all functions */
-
-main.o: main.c header.h
-	gcc -c main.c
+connectFour: main.c testforwin.c promptUser.c checkValidity.c drawmodBoard.c resetdisplay.c
+	gcc -o connectFour main.c testforwin.c promptUser.c checkValidity.c drawmodBoard.c resetdisplay.c
