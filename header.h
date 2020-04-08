@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+    // Configure the size here. Default is 6x7
     #define ROWS 6
     #define COLUMNS 7
     typedef struct game {
@@ -10,6 +11,8 @@
         int board[ROWS][COLUMNS];
         int winState;
     } Game;
+    // This structure can be used for FileIO
+    // Function prototypes:
     void drawmodBoard(int board[ROWS][COLUMNS], int column, int player);
     void resetdisplay(void);
     int testforwin(int board[ROWS][COLUMNS]);
