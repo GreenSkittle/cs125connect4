@@ -11,43 +11,43 @@ int testforwin(int board[ROWS][COLUMNS]){
             break;
         }
         for (k = 0; k <= COLUMNS - 1; k++){
-            if (board[j][k] == 1 && board[j+1][k] == 1 && board[j+2][k] == 1 && board[j+3][k] == 1){
+            if (board[j][k] == 1 && board[j+1][k] == 1 && board[j+2][k] == 1 && board[j+3][k] == 1 && j+3 <= ROWS - 1){
                 result = 1;
                 hasWon = 1;
                 break;
             }
-            else if (board[j][k] == 2 && board[j+1][k] == 2 && board[j+2][k] == 2 && board[j+3][k] == 2){
+            else if (board[j][k] == 2 && board[j+1][k] == 2 && board[j+2][k] == 2 && board[j+3][k] == 2 && j+3 <= ROWS - 1){
                 result = 2;
                 hasWon = 1;
                 break;
                 
             }
-            else if (board[j][k] == 1 && board[j][k+1] == 1 && board[j][k+2] == 1 && board[j][k+3] == 1){
+            else if (board[j][k] == 1 && board[j][k+1] == 1 && board[j][k+2] == 1 && board[j][k+3] == 1 && k+3 <= COLUMNS - 1){
                 result = 1;
                 hasWon = 1;
                 break;
             }
-            else if (board[j][k] == 2 && board[j][k+1] == 2 && board[j][k+2] == 2 && board[j][k+3] == 2){
+            else if (board[j][k] == 2 && board[j][k+1] == 2 && board[j][k+2] == 2 && board[j][k+3] == 2 && k+3 <= COLUMNS - 1){
                 result = 2;
                 hasWon = 1;
                 break;
             }
-            else if (board[j][k] == 1 && board[j+1][k+1] == 1 && board[j+2][k+2] == 1 && board[j+3][k+3] == 1){
+            else if (board[j][k] == 1 && board[j+1][k+1] == 1 && board[j+2][k+2] == 1 && board[j+3][k+3] == 1 && j+3 <= ROWS - 1 && k+3 <= COLUMNS - 1){
                 result = 1;
                 hasWon = 1;
                 break;
             }
-            else if (board[j][k] == 2 && board[j+1][k+1] == 2 && board[j+2][k+2] == 2 && board[j+3][k+3] == 2){
+            else if (board[j][k] == 2 && board[j+1][k+1] == 2 && board[j+2][k+2] == 2 && board[j+3][k+3] == 2 && j+3 <= ROWS - 1 && k+3 <= COLUMNS - 1){
                 result = 2;
                 hasWon = 1;
                 break;
             }
-            else if (board[j][k] == 1 && board[j-1][k+1] == 1 && board[j-2][k+2] == 1 && board[j-3][k+3] == 1){
+            else if (board[j][k] == 1 && board[j-1][k+1] == 1 && board[j-2][k+2] == 1 && board[j-3][k+3] == 1 && j-3 >= 0 && k+3 <= COLUMNS - 1){
                 result = 1;
                 hasWon = 1;
                 break;
             }
-            else if (board[j][k] == 2 && board[j-1][k+1] == 2 && board[j-2][k+2] == 2 && board[j-3][k+3] == 2){
+            else if (board[j][k] == 2 && board[j-1][k+1] == 2 && board[j-2][k+2] == 2 && board[j-3][k+3] == 2 && j-3 >= 0 && k+3 <= COLUMNS - 1){
                 result = 2;
                 hasWon = 1;
                 break;
