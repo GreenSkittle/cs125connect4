@@ -22,7 +22,6 @@ int main(void){
         if (testforwin(boardmatrix) != 0){
 			break;
 		}
-        // PROMPT AND CHECK
         while (1){
             location = promptUser(player);
             valid = checkValidity(boardmatrix, location);
@@ -35,7 +34,6 @@ int main(void){
                 printf("\033[0m");
             }
         }
-        // GAME ACTIONS
 		resetdisplay();
         drawmodBoard(boardmatrix, location, player);
 		turncounter++;
@@ -50,7 +48,6 @@ int main(void){
                 player = 1;
 		}
     }
-    // AFTER GAME
 	resetdisplay();
 	drawmodBoard(boardmatrix, -1, -1);
 	switch (testforwin(boardmatrix)){
