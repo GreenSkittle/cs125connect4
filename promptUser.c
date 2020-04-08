@@ -11,7 +11,7 @@ int promptUser(int player){
 			printf("\033[0m");
 			printf("Pick a spot A-%c:\n", COLUMNS + 64);
 			quickcheck = scanf("\n%s", string);
-			choice = string[0];
+			choice = string[0]; // Take the first element of the string the user inputs
 			break;
 		case 2:
 			printf("\033[1;31m");
@@ -19,10 +19,11 @@ int promptUser(int player){
 			printf("\033[0m");
 			printf("Pick a spot A-%c:\n", COLUMNS + 64);
 			quickcheck = scanf("\n%s", string);
-			choice = string[0];
+			choice = string[0]; // Take the first element of the string the user inputs
 			break;
 		default: break;
 	}
+    // Map ASCII to a number for capitals or lowercase
 	if(choice >= 65 && choice <= 90 && quickcheck == 1){
 		location = choice - 65;
 	}
