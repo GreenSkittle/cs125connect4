@@ -23,11 +23,9 @@ int promptUser(int player){
 			break;
 		default: break;
 	}
-	// CAPITALS A-Z
 	if(choice >= 65 && choice <= 90 && quickcheck == 1){
 		location = choice - 65;
 	}
-	// LOWERCASE a-z
 	else if(choice >= 97 && choice <= 122 && quickcheck == 1){
 		location = choice - 97;
 	}
