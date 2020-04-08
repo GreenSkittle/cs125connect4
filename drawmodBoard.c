@@ -9,7 +9,6 @@ void drawmodBoard(int boardmatrix[ROWS][COLUMNS], int column, int player){
             }
         }
     }
-    // PRIMITIVE PRINTING
     for (k = 0; k <= ROWS - 1; k++){
         printf("\n");
         for (j = 0; j <= COLUMNS - 1; j++){
