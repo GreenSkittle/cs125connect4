@@ -2,9 +2,11 @@
 void drawmodBoard(int boardmatrix[ROWS][COLUMNS], int column, int player){
     int k, j;
     if (column != -1 && player != -1){
+        // Check if we need to update the board
         for (k = ROWS - 1; k >= 0; k--){
             if (boardmatrix[k][column] == 0){
                 boardmatrix[k][column] = player;
+                // Simulates a piece falling into place
                 break;
             }
         }
@@ -13,6 +15,7 @@ void drawmodBoard(int boardmatrix[ROWS][COLUMNS], int column, int player){
         printf("\n");
         for (j = 0; j <= COLUMNS - 1; j++){
             printf(" %d", boardmatrix[k][j]);
+            // Print out each element in the array
         }
     }
     printf("\n");
