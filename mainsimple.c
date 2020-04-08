@@ -17,8 +17,8 @@ int main(void){
 	char yellowWins[] =	"\n The game has ended. Player 2 wins!\n";
 	char tie[] =	    "\n The game has ended in a draw!\n";
 	resetdisplay();
+	drawmodBoard(boardmatrix, -1, -1);
     while (running == 1){
-        drawmodBoard(boardmatrix, -1, -1);
         if (testforwin(boardmatrix) != 0){
 			break;
 		}
@@ -36,6 +36,7 @@ int main(void){
             }
         }
         // GAME ACTIONS
+		resetdisplay();
         drawmodBoard(boardmatrix, location, player);
 		turncounter++;
 		switch (player){
@@ -63,5 +64,6 @@ int main(void){
 			printf("%s", tie);
             break;
 	}
+	printf("\n");
     return 0;
 }
