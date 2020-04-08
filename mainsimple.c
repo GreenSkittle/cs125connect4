@@ -1,7 +1,7 @@
 #include "header.h"
 int main(void){
     int running = 1;
-	int player = 1;
+    int player = 1;
     int location = -1;
     int turncounter = 0;
     int valid = -1;
@@ -13,11 +13,13 @@ int main(void){
 		{0,0,0,0,0,0,0},
 		{0,0,0,0,0,0,0},
 	};
+    // Adjustable win-messages
 	char redWins[] =	"\n The game has ended. Player 1 wins!\n";
 	char yellowWins[] =	"\n The game has ended. Player 2 wins!\n";
 	char tie[] =	    "\n The game has ended in a draw!\n";
 	resetdisplay();
 	drawmodBoard(boardmatrix, -1, -1);
+    // Now following the flow chart diagram
     while (running == 1){
         if (testforwin(boardmatrix) != 0){
 			break;
@@ -29,6 +31,7 @@ int main(void){
                 break;
             }
             else {
+                // Error message
                 printf("\n\033[0;35m");
                 printf("Invalid Position!");
                 printf("\033[0m");
@@ -37,6 +40,7 @@ int main(void){
 		resetdisplay();
         drawmodBoard(boardmatrix, location, player);
 		turncounter++;
+        // Switch player using a switch statement:
 		switch (player){
 			case 1: 
 				player = 2;
@@ -48,6 +52,7 @@ int main(void){
                 player = 1;
 		}
     }
+    // This section runs once at the very end of the game:
 	resetdisplay();
 	drawmodBoard(boardmatrix, -1, -1);
 	switch (testforwin(boardmatrix)){
