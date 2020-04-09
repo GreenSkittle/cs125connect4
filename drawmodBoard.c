@@ -17,6 +17,7 @@ void drawmodBoard(int boardmatrix[ROWS][COLUMNS], int column, int player){
         for (j = 0; j <= COLUMNS - 1; j++){
             switch (boardmatrix[k][j]){
                 case 0:
+                    printf("\033[0m");
                     printf("| |");
                     break;
                 case 1:
