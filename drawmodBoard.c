@@ -12,9 +12,9 @@ void drawmodBoard(int boardmatrix[ROWS][COLUMNS], int column, int player){
     for (k = 0; k <= ROWS - 1; k++){
         printf("\n");
         for (j = 0; j <= COLUMNS - 1; j++){
-            switch (boardmatrix[j][k]){
+            switch (boardmatrix[k][J]){
                 case 0:
-                    printf("   ");
+                    printf("| |");
                     break;
                 case 1:
                     printf("\033[0;31m");
