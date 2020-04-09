@@ -14,8 +14,8 @@ int main(void){
 		{0,0,0,0,0,0,0},
 	};
     // Adjustable win-messages
-	char redWins[] =	"\n The game has ended. Player 1 wins!\n";
-	char yellowWins[] =	"\n The game has ended. Player 2 wins!\n";
+	char redWins[] =	"\n The game has ended. Red player wins!\n";
+	char yellowWins[] =	"\n The game has ended. Yellow player wins!\n";
 	char tie[] =	    "\n The game has ended in a draw!\n";
 	resetdisplay();
 	drawmodBoard(boardmatrix, -1, -1);
