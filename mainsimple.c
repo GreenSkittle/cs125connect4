@@ -16,9 +16,9 @@ int main(void){
     };
     FILE* demo = fopen("allGames.txt", "a");
     // Adjustable win-messages
-    char redWins[] =	"\n The game has ended. Red player wins!\n";
-    char yellowWins[] =	"\n The game has ended. Yellow player wins!\n";
-    char tie[] =	    "\n The game has ended in a draw!\n";
+    char redWins[] =	"\033[0m\n The game has ended. Red player wins!\n";
+    char yellowWins[] =	"\033[0m\n The game has ended. Yellow player wins!\n";
+    char tie[] =	    "\033[0m\n The game has ended in a draw!\n";
     resetdisplay();
     drawmodBoard(boardmatrix, -1, -1);
     // Now following the flow chart diagram
@@ -70,6 +70,7 @@ int main(void){
     }
     printf("\n");
     // Perform FileIO using a similar function to drawmodboard.
+        fprintf(demo,"\n");
         for (j = 0; j <= ROWS - 1; j++){
             fprintf(demo, "\n ");
             for (k = 0; k <= COLUMNS - 1; k++){
