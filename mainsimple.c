@@ -6,14 +6,7 @@ int main(void){
     int turncounter = 0;
     int valid = -1;
     int j, k;
-    int boardmatrix[ROWS][COLUMNS] = {
-        {0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0},
-    };
+    int boardmatrix[ROWS][COLUMNS] = {{0},{0}};
     FILE* demo = fopen("allGames.txt", "a");
     // Adjustable win-messages
     char redWins[] =	"\033[0m\n The game has ended. Red player wins!\n";
@@ -79,10 +72,10 @@ int main(void){
                         fprintf(demo, "| |");
                         break;
                     case 1:
-                        fprintf(demo, "|%c|", 'X');
+                        fprintf(demo, "|%c|", '1');
                         break;
                     case 2:
-                        fprintf(demo, "|%c|", 'O');
+                        fprintf(demo, "|%c|", '2');
                         break;
                 }
             }
