@@ -21,15 +21,14 @@ void drawmodBoard(int boardmatrix[ROWS][COLUMNS], int column, int player){
                     printf("| |");
                     break;
                 case 1:
-                    printf("\033[0;31m");
-                    printf("|O|");
+                    printf("\033[0m|\033[0;31mO\033[0m|");
                     break;
                 case 2:
-                    printf("\033[0;33m");
-                    printf("|O|");
+                    printf("\033[0m|\033[0;33mO\033[0m|");
                     break;
             }
         }
     }
     printf("\n");
 }
+
