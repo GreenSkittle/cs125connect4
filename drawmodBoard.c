@@ -11,6 +11,8 @@ void drawmodBoard(int boardmatrix[ROWS][COLUMNS], int column, int player){
             }
         }
     }
+    // Print Legend
+    printf("  a  b  c  d  e  f  g\n");
     // Print in color each element
     for (k = 0; k <= ROWS - 1; k++){
         printf("\n ");
@@ -29,6 +31,7 @@ void drawmodBoard(int boardmatrix[ROWS][COLUMNS], int column, int player){
             }
         }
     }
-    printf("\n");
+    // Print the end-cap
+    printf("\n |-------------------|\n []                 []\n");
 }
 
