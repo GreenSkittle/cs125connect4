@@ -81,7 +81,7 @@ int main(void)
             }
         }
     }
-    fprintf(demo, "\n\033[0m Total Turns: %d\n", turncounter);
+    fprintf(demo, "\n Total Turns: %d\n", turncounter);
     fclose(demo);
     return 0;
 }
