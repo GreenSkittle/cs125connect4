@@ -1,5 +1,6 @@
 #include "header.h"
-int main(void){
+int main(void)
+{
     int running = 1;
     int player = 1;
     int location = -1;
@@ -63,22 +64,24 @@ int main(void){
     }
     printf("\n");
     // Perform FileIO using a similar function to drawmodboard.
-        fprintf(demo,"\n");
-        for (j = 0; j <= ROWS - 1; j++){
-            fprintf(demo, "\n ");
-            for (k = 0; k <= COLUMNS - 1; k++){
-                switch (boardmatrix[j][k]){
-                    case 0:
-                        fprintf(demo, "| |");
-                        break;
-                    case 1:
-                        fprintf(demo, "|%c|", '1');
-                        break;
-                    case 2:
-                        fprintf(demo, "|%c|", '2');
-                        break;
-                }
+    fprintf(demo,"\n");
+    for (j = 0; j <= ROWS - 1; j++){
+        fprintf(demo, "\n ");
+        for (k = 0; k <= COLUMNS - 1; k++){
+            switch (boardmatrix[j][k]){
+                case 0:
+                    fprintf(demo, "| |");
+                    break;
+                case 1:
+                    fprintf(demo, "|%c|", '1');
+                    break;
+                case 2:
+                    fprintf(demo, "|%c|", '2');
+                    break;
             }
+        }
     }
+    fprintf("\nTotal Turns: %d.\n\n", turncounter);
+    fclose(demo);
     return 0;
 }
