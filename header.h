@@ -4,7 +4,7 @@
     #include <stdlib.h>
     #include <string.h>
     // Configure the size here. Default is 6x7.
-    // Don't make Columns greater than 26.
+    // Make in range 4x4 - 26x26 for best result.
     #define ROWS 6
     #define COLUMNS 7
     // Function prototypes:

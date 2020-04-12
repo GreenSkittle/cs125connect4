@@ -32,13 +32,15 @@ void drawmodBoard(int boardmatrix[ROWS][COLUMNS], int column, int player){
         }
     }
     // Print the end-cap
+    //printf("\n |-------------------|\n []                 []\n");
     printf("\n |--");
-    for (j = 1; j <= COLUMNS - 2; j++){
+    for (j = 0; j <= COLUMNS - 3; j++){
         printf("---");
     }
     printf("--|\n []");
-    for (j=1; j <= COLUMNS - 2; j++){
-        printf("   "); // Three spaces
+    for (j=0; j <= COLUMNS - 3; j++){
+        printf("   ");
     }
     printf("  []\n");
 }
+
