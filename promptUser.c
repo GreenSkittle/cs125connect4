@@ -1,7 +1,7 @@
 #include "header.h"
 int promptUser(int player){
     char string[255];
-    char choice;
+    char choice = "\0";
     int location;
     int quickcheck;
     switch (player){
